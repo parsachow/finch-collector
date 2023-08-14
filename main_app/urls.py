@@ -7,4 +7,5 @@ urlpatterns = [
     #the name doesn't have to match the views 
     path('', views.home, name='home'),
     path('about/', views.about, name='about'),
+    path('finches/', views.finch_index, name='index')
 ]
