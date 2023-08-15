@@ -1,11 +1,25 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    
-</body>
-</html>
+{% extends 'base.html' %}
+{% block content %}
+
+<h1>Finches List</h1>
+
+{% for finch in finches %}
+  <div class="card">
+    <a href="/finches/{{finch.id}}">
+        <div class="card-content">
+        <span class="card-title">{{ finch.name }}</span>
+        <p>Type: {{ finch.type }}</p>
+        <p>Personality: {{ finch.personality }}</p>
+        <p>Color: {{ finch.color }}</p>
+        
+        {% if finch.age > 2 %}
+            <p>Age: {{ finch.age }}</p>
+        {% else %}
+            <p>Age: Baby Finch</p>
+        {% endif %}
+        </div>
+    </a>
+  </div>
+{% endfor %}
+
+{% endblock %}

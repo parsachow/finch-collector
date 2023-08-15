@@ -7,5 +7,7 @@ urlpatterns = [
     #the name doesn't have to match the views 
     path('', views.home, name='home'),
     path('about/', views.about, name='about'),
-    path('finches/', views.finch_index, name='index')
+    #make html templates files with the proper route and name
+    path('finches/', views.finch_index, name='index'),
+    path('finches/<int:finch_id>/', views.finch_detail, name='detail')
 ]
